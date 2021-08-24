@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+
+//@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '_variables.scss';
+@import 'ueg-theme';
+
+/* ==================== Layout ==================== */
+body, div.wrapper {
+ // font-size: 0.9em;
+  min-height:100vh;
+  margin: 0;
+
+}
+
+.footer {
+  background-image: $theme-background;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.page-content {
+  padding: 20px 40px;
+}
+
+.content__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+main {
+  background: $theme-background-solid;
+}
+/* ---- variaveis do bootstrap para compatiblidade */
+.d-block {
+  display: block !important;
+}
+
+.ml-1,
+.mx-1 {
+  margin-left: 0.25rem !important;
+}
+
+.ml-2,
+.mx-2 {
+  margin-left: 0.5rem !important;
+}
+
+
+
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+  padding: .5rem 1rem;
+
+  // Because flex properties aren't inherited, we need to redeclare these first
+  // few properties so that content nested within behave properly.
+  > .container,
+  > .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+/* ==================== FIM Layout ==================== */
+
+
+
+
+.icon-gray{
+    color: #212529;
+    opacity: 0.5;
+}
+
+.font-color{
+    color: #212529;
+}
+
+.icon-lg{
+    font-size: 3em;
+}
+
+.icon-white{
+    color: #fff;
+}
+
+
+
+/* ==================== Formulário ==================== */
+.required-label{
+  color: red;
+  text-align: right;
+  font-size: 0.7em;
+  margin-bottom: 0;
+}
+
+.required::before{
+  content: '* ';
+  color: red;
+}
+
+
+
+.mat-button-wrapper{
+  .mat-icon {
+    vertical-align: top !important;
+    padding-left: 1px;
+  }
+}

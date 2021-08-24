@@ -1,0 +1,59 @@
+  <div fxLayout="column" fxFlexOffset="auto" [style.margin-top.%]="5">
+    <div fxLayout="row" [style.padding-top.px]="5" fxFlexAlign="center"  >
+      <div
+        fxLayout="row"
+        fxLayout.xs="column"
+        fxLayout.sm="column"
+        fxFlexAlign="center"
+      >
+
+        <div fxFlex
+             fxFlex.xs="100"
+             fxFlexOffset.lg="10"
+             fxFlexAlign="center"
+        >
+          <h2>
+            <i>
+              Bem vindo ao Portal de Acesso
+              do sistema modelo de acesso.
+            </i>
+          </h2>
+          (Demonstração: usuário: admin , Senha: admin)
+        </div>
+        <div fxFlex
+             fxFlex.xs="100"
+        >
+          <mat-card>
+            <mat-card-title [style.text-align]="'center'">
+              <mat-icon class="icon_size" color="primary">person_pin</mat-icon>
+            </mat-card-title>
+            <mat-card-content>
+              <form  #formLogin="ngForm" (ngSubmit)="onSubmit(usuarioTO, formLogin)" novalidate>
+                <div fxLayout="column">
+                  <mat-form-field >
+                    <mat-label >{{'LABEL_LOGIN' | i18n}}</mat-label>
+                    <input matInput id="inputUsername" type="text" title="{{'LABEL_LOGIN' | i18n}}"
+                           name="login" required [(ngModel)]="usuarioTO.login" autocomplete="off"
+                           placeholder="{{'LABEL_INFORME_LOGIN' | i18n}}" maxlength="20">
+                    <mat-error validationMessage [submitted]="submitted"></mat-error>
+                  </mat-form-field>
+                  <mat-form-field >
+                    <mat-label >Senha</mat-label>
+                    <input matInput id="inputPassword" type="password" class="form-control" title="{{'LABEL_SENHA' | i18n}}"
+                           name="senha" required [(ngModel)]="usuarioTO.senha"
+                           placeholder="{{'LABEL_INFORME_SENHA' | i18n}}" maxlength="20">
+                    <mat-error validationMessage [submitted]="submitted"></mat-error>
+                  </mat-form-field>
+
+                  <button mat-raised-button color="primary" type="submit"  title="{{'LABEL_ENTRAR' | i18n}}">
+                    <span>{{'LABEL_ENTRAR' | i18n}}</span>
+                  </button>
+                </div>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+    </div>
+  </div>

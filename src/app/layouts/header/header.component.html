@@ -1,0 +1,47 @@
+<!-- HEADER -->
+<nav class="header navbar">
+  <div class="container d-block"
+       fxFlex.gt-xs="{{ FX_FLEX_GT_XS }}"
+       fxFlex.gt-sm="{{ FX_FLEX_GT_SM }}"
+       fxFlex.gt-md="{{ FX_FLEX_GT_MD }}"
+       fxFlex.gt-lg="{{ FX_FLEX_GT_LG }}"
+       fxFlex.xl="{{ FX_FLEX_XL }}" >
+    <div fxLayout="column">
+      <div fxLayout="row">
+        <div  fxLayoutAlign="start center" >
+          <a routerLink="/administracao" href="javascript:void(0)" title="{{'TITLE_SISTEMA_NOME' | i18n}}">
+            <img fxHide.xs="true" fxHide.sm="true"
+              src="assets/img/layout_set_logo.png" width="300" alt="{{'TITLE_SISTEMA_NOME' | i18n}}"
+                 title="{{'TITLE_SISTEMA_NOME' | i18n}}">
+            <img fxHide.md="true" fxHide.lg="true" fxHide.xl="true"
+                 src="assets/img/layout_set_logo_min.png" width="60" alt="{{'TITLE_SISTEMA_NOME' | i18n}}"
+                 title="{{'TITLE_SISTEMA_NOME' | i18n}}">
+          </a>
+        </div>
+        <div fxLayoutAlign="start center">
+          <h1 class="ml-2">
+          <a routerLink="/administracao" href="javascript:void(0)" title="{{'TITLE_SISTEMA_NOME' | i18n}}">
+            {{'TITLE_SISTEMA_NOME' | i18n}}
+          </a>
+          </h1>
+        </div>
+      </div>
+      <div fxLayout="row" *ngIf="isAutenticado()">
+        <div fxFlex fxLayoutAlign="end center" >
+          <div fxLayout="row">
+            <a href="javascript:void(0)"  class="nav-user nav-link ">
+              <mat-icon class="icon header_user_out">account_circle</mat-icon>
+              <span class="ml-1 header_user_out">{{'LABEL_USUARIO' | i18n}}: {{nomeUsuario}}</span>
+            </a>
+          </div>
+          <div fxLayout="row" class="ml-1">
+            <a (click)="sair()" title="{{'LABEL_SAIR' | i18n}}" class="nav-link">
+              <mat-icon class="header_user_out">exit_to_app</mat-icon>
+              <span class="ml-1 header_user_out">{{'LABEL_SAIR' | i18n}}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

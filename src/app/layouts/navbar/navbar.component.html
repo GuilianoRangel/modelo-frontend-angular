@@ -1,0 +1,61 @@
+<mat-toolbar color="primary" class="container" *ngIf="isAdministracao">
+  <div class="container d-block"
+       fxFlex.gt-xs="{{ FX_FLEX_GT_XS }}"
+       fxFlex.gt-sm="{{ FX_FLEX_GT_SM }}"
+       fxFlex.gt-md="{{ FX_FLEX_GT_MD }}"
+       fxFlex.gt-lg="{{ FX_FLEX_GT_LG }}"
+       fxFlex.xl="{{ FX_FLEX_XL }}" >
+    <div fxHide.gt-xs>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <mat-menu #menu="matMenu" [overlapTrigger]="false" >
+      <button mat-menu-item [routerLink]="['/administracao']">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/administracao/grupo']"
+              *ngIf="securityService.hasRoles(['ROLE_GRUPO_VISUALIZAR', 'ROLE_GRUPO_PESQUISAR'])"
+      >
+        <mat-icon>group</mat-icon>
+        <span>{{ 'LABEL_GRUPO' | i18n}}</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/administracao/usuario']"
+              *ngIf="securityService.hasRoles(['ROLE_USUARIO_VISUALIZAR', 'ROLE_USUARIO_PESQUISAR'])"
+      >
+        <mat-icon>person</mat-icon>
+        <span>Usuários</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/administracao/audit']"
+              *ngIf="securityService.hasRoles(['ROLE_AUDITORIA_VISUALIZAR', 'ROLE_AUDITORIA_PESQUISAR'])"
+      >
+        <mat-icon>sync_problem</mat-icon>
+        <span>Auditória</span>
+      </button>
+    </mat-menu>
+
+    <div fxFlex fxLayout fxLayoutAlign="start" fxHide.xs>
+      <a mat-button [routerLink]="['/administracao']">
+        <mat-icon>home</mat-icon>
+        Home</a>
+      <a mat-button [routerLink]="['/administracao/grupo']"
+         *ngIf="securityService.hasRoles(['ROLE_GRUPO_VISUALIZAR', 'ROLE_GRUPO_PESQUISAR'])"
+      >
+        <mat-icon>group</mat-icon>
+        Grupos</a>
+      <a mat-button [routerLink]="['/administracao/usuario']"
+         *ngIf="securityService.hasRoles(['ROLE_USUARIO_VISUALIZAR', 'ROLE_USUARIO_PESQUISAR'])"
+      >
+        <mat-icon>person</mat-icon>
+        Usuários</a>
+      <a mat-button [routerLink]="['/administracao/audit']"
+         *ngIf="securityService.hasRoles(['ROLE_AUDITORIA_VISUALIZAR', 'ROLE_AUDITORIA_PESQUISAR'])"
+      >
+        <mat-icon>sync_problem</mat-icon>
+        Auditoria</a>
+    </div>
+  </div>
+</mat-toolbar>
+

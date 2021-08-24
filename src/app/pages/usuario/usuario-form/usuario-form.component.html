@@ -1,0 +1,196 @@
+<div fxLayout="column" fxLayoutGap="1.5%" fxLayoutGap.xs="2%">
+
+  <div fxLayout="row">
+    <div class="content__title" fxFlex fxFlexAlign="center">
+      <span *ngIf="acaoSistema.isAcaoAlterar()">{{'LABEL_ALTERAR_USUARIO' | i18n}}</span>
+      <span *ngIf="acaoSistema.isAcaoIncluir()">{{'LABEL_INCLUIR_USUARIO' | i18n}}</span>
+      <span *ngIf="acaoSistema.isAcaoVisualizar()">{{'LABEL_VISUALIZAR_USUARIO' | i18n}}</span>
+    </div>
+  </div>
+
+  <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+
+    <form #formUsuario="ngForm">
+      <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+        <mat-card-title>
+          <span>{{'LABEL_DADOS_USUARIO' | i18n}}</span>
+        </mat-card-title>
+        <mat-card-content fxLayout="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%">
+
+          <div fxLayout="row" fxLayoutAlign.gt-xs="end end" fxLayout.lt-sm="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%" fxLayoutGap.xs="7%">
+            <div fxLayout="column" fxLayoutAlign.gt-xs="start start" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="3%" fxLayoutGap.gt-xs="7%"
+                 *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">
+              <mat-label>{{'LABEL_ACESSO_BLOQUEADO' | i18n}}:</mat-label>
+              <mat-label>{{ (usuario.acessoBloqueado ? 'LABEL_SIM' : 'LABEL_NAO') | i18n }}</mat-label>
+            </div>
+
+            <div fxLayout="column" fxLayoutAlign.gt-xs="start start" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="3%" fxLayoutGap.gt-xs="7%"
+                 *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">
+              <mat-label>{{'LABEL_STATUS_PORTAL' | i18n}}:</mat-label>
+              <mat-slide-toggle [(ngModel)]="usuario.status" (change)="alterarStatusUsuario(usuario)" name="statusUsuario"
+                                *ngIf="acaoSistema.isAcaoAlterar() && securityService.hasRoles('ROLE_USUARIO_ATIVAR_INATIVAR')"
+                                title="{{ (usuario.status ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n }}"
+              >
+              </mat-slide-toggle>
+              <mat-label
+                *ngIf="acaoSistema.isAcaoVisualizar() || !securityService.hasRoles('ROLE_USUARIO_ATIVAR_INATIVAR')">
+                {{(usuario.status ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n}}
+              </mat-label>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
+            <mat-form-field fxFlex>
+              <mat-label>{{'LABEL_LOGIN' | i18n}}</mat-label>
+              <input matInput placeholder="{{'LABEL_INFORME_LOGIN' | i18n}}" title="{{'LABEL_LOGIN' | i18n}}"
+                     [(ngModel)]="usuario.login" name="login" required maxlength="20"
+                     [disabled]="acaoSistema.isAcaoVisualizar()"
+              >
+              <mat-error validationMessage [submitted]="submittedUsuario"></mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex>
+              <mat-label>{{'LABEL_EMAIL' | i18n}}</mat-label>
+              <input matInput placeholder="{{'LABEL_INFORME_EMAIL' | i18n}}" title="{{'LABEL_EMAIL' | i18n}}" type="email"
+                     [(ngModel)]="usuario.email" name="email" required maxlength="50"
+                     [disabled]="acaoSistema.isAcaoVisualizar()"
+              >
+              <mat-error validationMessage [submitted]="submittedUsuario"></mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
+            <mat-form-field fxFlex>
+              <mat-label>{{'LABEL_NOME' | i18n}}</mat-label>
+              <input matInput placeholder="{{'LABEL_INFORME_NOME' | i18n}}" title="{{'LABEL_NOME' | i18n}}"
+                     [(ngModel)]="usuario.nome" name="nome" required maxlength="100"
+                     [disabled]="acaoSistema.isAcaoVisualizar()"
+              >
+              <mat-error validationMessage [submitted]="submittedUsuario"></mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex>
+              <mat-label>{{'LABEL_CPF' | i18n}}</mat-label>
+              <input matInput placeholder="{{'LABEL_INFORME_CPF' | i18n}}" title="{{'LABEL_CPF' | i18n}}"
+                     [(ngModel)]="usuario.cpf" name="cpf" required maxlength="15" mask="000.000.000-00"
+                     [disabled]="acaoSistema.isAcaoVisualizar()"
+                     (focusout)="validarCpf()"
+              >
+              <mat-error validationMessage [submitted]="submittedUsuario"></mat-error>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+
+    <app-usuario-telefone-form [telefonesUsuario]="telefonesUsuario" [idUsuario]="usuario.id"></app-usuario-telefone-form>
+
+    <form #formGrupo="ngForm">
+      <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+        <mat-card-title>
+          <span>{{'LABEL_GRUPOS_ACESSO' | i18n}}</span>
+        </mat-card-title>
+        <mat-card-content fxLayout="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%">
+
+          <div fxLayout="row" fxLayoutAlign.gt-xs="center center" fxLayout.lt-sm="column" fxLayoutGap="0.7%"
+            *ngIf="!acaoSistema.isAcaoVisualizar()">
+            <div fxFlex fxFlex.lt-sm="100">
+
+            </div>
+
+            <mat-form-field fxFlex fxFlex.lt-sm="100">
+              <mat-select id="inputGrupo" placeholder="{{'LABEL_GRUPO' | i18n}}" title="{{'LABEL_GRUPO' | i18n}}" name="grupo"
+                          [(ngModel)]="grupoInclusao.grupo" [disabled]="gruposDisabled || acaoSistema.isAcaoVisualizar()" required
+              >
+                <mat-option [value]="undefined">{{'LABEL_SELECIONE' | i18n}}</mat-option>
+                <mat-option *ngFor="let grupo of grupos" [value]="grupo">
+                  {{grupo.nome}}
+                </mat-option>
+              </mat-select>
+              <mat-error validationMessage [submitted]="submittedGrupo"></mat-error>
+            </mat-form-field>
+
+            <a mat-mini-fab title="{{'LABEL_ADICIONAR_GRUPO' | i18n}}" class="btn-primary" (click)="adicionarGrupo(grupoInclusao, formGrupo, $event)">
+              <mat-icon>add</mat-icon>
+            </a>
+          </div>
+
+          <div fxLayout="column" fxFlex="100"*ngIf="dataSourceGrupos.data.length != 0">
+
+            <div class="table-detail">
+              <mat-table #table [dataSource]="dataSourceGrupos">
+
+                <ng-container matColumnDef="nomeGrupoVinculado">
+                  <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef> {{ 'LABEL_NOME_GRUPO_VINCULADO' | i18n}} </mat-header-cell>
+                  <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element">
+                    <div fxFlex fxLayout="row">
+                      <div fxFlex="80px" fxHide.gt-xs="true" fxLayoutAlign="center end">
+                        <span  class="mat-body-strong" >{{ 'LABEL_NOME_GRUPO_VINCULADO' | i18n}} :</span>
+                      </div>
+                      <div >
+                        {{element.nomeGrupo}}
+                      </div>
+                    </div>
+                  </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="remover" *ngIf="!acaoSistema.isAcaoVisualizar()">
+                  <mat-header-cell fxFlex.gt-sm="100px" class="style-header f" fxLayoutAlign="center center" *matHeaderCellDef> {{ 'LABEL_REMOVER' | i18n}} </mat-header-cell>
+                  <mat-cell fxFlex.lt-sm="100"  fxLayoutAlign="center center"  fxFlex.gt-sm="100px"
+                            *matCellDef="let element">
+                    <div fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center center">
+                      <div  fxHide.gt-xs="true" fxLayoutAlign="center center">
+                        <span  class="mat-body-strong" >{{ 'LABEL_REMOVER' | i18n}} :</span>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="center center">
+                        <a mat-mini-fab title="{{'LABEL_REMOVER_GRUPO' | i18n}}" class="btn-primary"
+                           (click)="removerGrupo(element)">
+                          <mat-icon>delete</mat-icon>
+                        </a>
+                      </div>
+                    </div>
+                  </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns" fxHide.lt-sm="true"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;" fxLayout.lt-sm="column" fxLayout="row"
+                         fxLayoutAlign.lt-sm="space-around stretch"
+                         ngClass.lt-sm="mat-row-lt-sm"
+                ></mat-row>
+
+              </mat-table>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+
+    <mat-card-footer fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+      <div fxLayout="row" fxFlex="100" fxLayoutAlign="end center">
+        <div fxFlex.gt-sm="30" fxFlex.sm="50" fxFlex.lt-sm="100" fxFlexAlign="space-between"
+             fxLayoutAlign="end center">
+          <a title="{{'LABEL_VOLTAR' | i18n}}" (click)="cancelar()" fxFlex fxFlexOffset="1"
+             class="mat-button mat-raised-button mat-primary mat-button-base"
+             *ngIf="acaoSistema.isAcaoVisualizar()"
+          >
+            <span>{{'LABEL_VOLTAR' | i18n}}</span>
+          </a>
+          <a title="{{'LABEL_CANCELAR' | i18n}}" (click)="cancelar()" fxFlex fxFlexOffset="1"
+             class="mat-button mat-raised-button mat-warn mat-button-base"
+             *ngIf="!acaoSistema.isAcaoVisualizar()"
+          >
+            <span>{{'LABEL_CANCELAR' | i18n}}</span>
+          </a>
+          <button type="submit" title="{{'LABEL_SALVAR' | i18n}}" (click)="salvar(usuario, formUsuario, $event)"
+                  fxFlex fxFlexOffset="1"
+                  class="mat-button mat-raised-button mat-primary mat-button-base"
+                  *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoIncluir()"
+          >
+            <span>{{'LABEL_SALVAR' | i18n}}</span>
+          </button>
+        </div>
+      </div>
+    </mat-card-footer>
+
+  </mat-card>
+</div>

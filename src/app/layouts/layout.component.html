@@ -1,0 +1,27 @@
+<div fxFlex fxLayout="column"  fxFlexFill class="wrapper mat-typography">
+
+    <!-- HEADER -->
+    <app-header #header ></app-header>
+
+    <!-- NAV -->
+    <app-navbar id="container-nav" (perfil)="openPerfilModal()" (logout)="sair()" *ngIf="isAutenticado()">
+    </app-navbar>
+
+    <!-- MAIN -->
+    <main  fxFlex="strech">
+        <div class="container page-content"
+             fxFlex.gt-xs="{{ FX_FLEX_GT_XS }}"
+             fxFlex.gt-sm="{{ FX_FLEX_GT_SM }}"
+             fxFlex.gt-md="{{ FX_FLEX_GT_MD }}"
+             fxFlex.gt-lg="{{ FX_FLEX_GT_LG }}"
+             fxFlex.xl="{{ FX_FLEX_XL }}"
+             fxLayout="column"
+             fxFlexAlign="start center"
+        >
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <app-footer fxFlexOffset="auto"></app-footer>
+</div>

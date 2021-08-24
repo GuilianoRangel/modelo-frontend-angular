@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+    <div mat-dialog-content fxLayout="row" fxLayoutAlign="center">
+        <h4>{{item.msg }}</h4>
+    </div>
+    <div *ngIf="item.isConfirmTypeYesNo()" mat-dialog-actions fxLayout="row" fxLayoutAlign="center">
+        <div fxFlex fxFlexOffset="-2%" fxLayoutAlign="end">
+            <button type="button" title="{{'LABEL_NAO' | i18n}}" (click)="onConfirmNo()"
+                class="mat-button mat-raised-button mat-warn mat-button-base">
+                <span>{{'LABEL_NAO' | i18n}}</span>
+            </button>
+        </div>
+        <div fxFlex fxFlexOffset="2%">
+            <button type="button" title="{{'LABEL_SIM' | i18n}}" (click)="onConfirmYesOk()"
+                class="mat-button mat-raised-button mat-primary mat-button-base">
+                <span>{{'LABEL_SIM' | i18n}}</span>
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf="item.isConfirmTypeOk()" mat-dialog-actions fxLayout="row" fxLayoutAlign="center">
+        <div fxFlex="10%" fxLayoutAlign="center">
+            <button type="button" title="{{'LABEL_OK' | i18n}}" (click)="onConfirmYesOk()"
+                class="mat-button mat-raised-button mat-primary mat-button-base">
+                <span>{{'LABEL_OK' | i18n}}</span>
+            </button>
+        </div>
+    </div>
+</div>

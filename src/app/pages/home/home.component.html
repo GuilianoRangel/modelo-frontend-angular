@@ -1,0 +1,89 @@
+  <div
+    fxFlex
+    fxLayout="column"
+    fxFlexOffset="5" fxLayoutGap="1%">
+
+    <ng-template [ngIf]="sistemas && sistemas.length > 0">
+      <ng-template [ngIf]="datasourceAdministrador().length > 0">
+        <div fxLayout="column"
+             fxFlex="80"
+             fxFlexOffset.lg="10"
+             class="position-box border-box">
+
+          <span class="font-color">
+              <i class="material-icons icon-gray">settings_applications</i>
+              <i class="font-details">{{'TITLE_ADMINISTRADOR' | i18n}}</i>
+          </span>
+        </div>
+        <div fxLayout="row"
+             fxFlex="80"
+             fxLayout.md="column" fxLayout.xs="column"
+             fxFlexOffset="1" >
+
+          <div fxLayout="row"
+               fxFlex="12"
+               fxFlex.md="20"
+               fxFlex.sm="33"
+               fxFlex.xs="90"
+               class="pd"
+               *ngFor="let sistema of datasourceAdministrador()"
+          >
+
+            <mat-card class="card-color mat-card-sistema" (click)="acessarAdministracao()">
+              <mat-card-content>
+                <div class="material-icons">
+                  <mat-icon class="icon-white icon-lg">{{sistema.icone ? sistema.icone : 'list_alt'}}</mat-icon>
+                </div>
+              </mat-card-content>
+              <mat-card-footer>{{sistema.nome}}</mat-card-footer>
+            </mat-card>
+          </div>
+        </div>
+      </ng-template>
+
+      <div  fxLayout="column"
+            fxFlex="80"
+            fxFlexOffset="5"
+            class="border-box">
+
+          <span class="font-color">
+              <i class="material-icons icon-gray icon-size">view_headline</i>
+              <i class="font-details">{{'TITLE_TODOS_OS_MEUS_SISTEMA' | i18n}}</i>
+          </span>
+      </div>
+
+      <div fxLayout="row"
+           fxLayout.md="column" fxLayout.xs="column"
+           fxFlex="80"
+           fxFlexOffset="5" *ngIf="grupos.length == 0">
+        <div fxLayout="row" fxFlex="100"><p>Você não possui vínculo a nenhum grupo. </p></div>
+      </div>
+
+      <div fxLayout="row"
+           fxLayout.md="column" fxLayout.xs="column"
+           fxFlex="80"
+           fxFlexOffset="1" *ngIf="grupos.length > 0">
+
+        <div fxLayout="row" fxLayout.md="column" fxLayout.xs="column"
+             fxFlex="12"
+             fxFlex.md="20"
+             fxFlex.sm="33"
+             fxFlex.xs="90"
+             class="pd"  *ngFor="let sistema of datasourceTodos()" >
+
+          <mat-card class="card-color mat-card-sistema" (click)="acessarSistema(sistema)">
+            <mat-card-content>
+              <div class="material-icons">
+                <mat-icon class="icon-lg icon-white">{{sistema.icone ? sistema.icone : 'list_alt'}}</mat-icon>
+              </div>
+            </mat-card-content>
+            <mat-card-footer>{{sistema.nome}}</mat-card-footer>
+          </mat-card>
+
+
+        </div>
+      </div>
+
+    </ng-template>
+  </div>
+

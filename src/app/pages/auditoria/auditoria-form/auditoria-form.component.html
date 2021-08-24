@@ -1,0 +1,103 @@
+<div fxLayout="column" fxLayoutGap="1.5%" fxLayoutGap.xs="2%">
+
+    <div fxLayout="row">
+      <div class="content__title" fxFlex fxFlexAlign="center">
+        <span >{{'LABEL_DETALHES_LOG' | i18n}}</span>
+      </div>
+    </div>
+
+    <form #formGrupo="ngForm">
+      <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+        <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+          <mat-card-title>
+            <span>{{'LABEL_DADOS_USUARIO' | i18n}}</span>
+          </mat-card-title>
+          <mat-card-content fxLayout="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%">
+            <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
+              <mat-form-field fxFlex fxFlex.lt-sm="100" fxFlex.gt-xs="40">
+                <mat-label>{{'LABEL_NOME' | i18n}}</mat-label>
+                <input matInput title="{{'LABEL_NOME' | i18n}}"
+                       [(ngModel)]="auditoria.nomeUsuario" name="nome" [disabled]="true">
+              </mat-form-field>
+
+              <mat-form-field fxFlex>
+                <mat-label>{{'LABEL_LOGIN' | i18n}}</mat-label>
+                <input matInput title="{{'LABEL_LOGIN' | i18n}}"
+                       [(ngModel)]="auditoria.loginUsuario" name="login" [disabled]="true">
+              </mat-form-field>
+
+              <mat-form-field fxFlex fxFlex.lt-sm="100" fxFlex.gt-xs="40">
+                <mat-label>{{'LABEL_EMAIL' | i18n}}</mat-label>
+                <input matInput title="{{'LABEL_EMAIL' | i18n}}"
+                       [(ngModel)]="auditoria.email" name="email" [disabled]="true">
+              </mat-form-field>
+
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+          <mat-card-title>
+            <span>{{'LABEL_DETALHES_DO_LOG' | i18n}}</span>
+          </mat-card-title>
+          <mat-card-content fxLayout="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%">
+            <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
+              <mat-form-field fxFlex fxFlex.lt-sm="100" fxFlex.gt-xs="25">
+                <mat-label>{{'LABEL_DATA_OPERACAO' | i18n}}</mat-label>
+                <input matInput title="{{'LABEL_DATA_OPERACAO' | i18n}}"  [disabled]="true"  name="dataOperacao"
+                       value="{{auditoria.dataHoraAlteracao | date: 'dd/MM/yyyy hh:mm'}}">
+
+              </mat-form-field>
+
+              <mat-form-field fxFlex fxFlex.lt-sm="100" fxFlex.gt-xs="25">
+                <mat-label>{{'LABEL_ENTIDADE' | i18n}}</mat-label>
+                <input matInput title="{{'LABEL_ENTIDADE' | i18n}}"  [disabled]="true" [(ngModel)]="auditoria.entidadeNome"  name="entidadeNome">
+              </mat-form-field>
+
+              <mat-form-field fxFlex fxFlex.lt-sm="100" fxFlex.gt-xs="25">
+                <mat-label>{{'LABEL_TIPO_OPERACAO' | i18n}}</mat-label>
+                 <input matInput title="{{'LABEL_TIPO_OPERACAO' | i18n}}"  [disabled]="true" [(ngModel)]="tipoRevisao"  name="tipoRevisao">
+              </mat-form-field>
+
+              <mat-form-field fxFlex fxFlex.lt-sm="100" fxFlex.gt-xs="25">
+                <mat-label>{{'LABEL_IP_USUARIO' | i18n}}</mat-label>
+                 <input matInput title="{{'LABEL_IP_USUARIO' | i18n}}"  [disabled]="true" [(ngModel)]="auditoria.ipUsuario"  name="ipUsuario">
+              </mat-form-field>
+
+
+            </div>
+            <h3>{{'LABEL_DETALHES' | i18n}}</h3>
+            <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+              <mat-card-content>
+                <div fxLayoutAlign="start center" *ngFor="let detalhe of detalhes">
+                  <div fxFlex fxLayout="row">
+                    <div fxFlex="200px" fxLayoutAlign="end center" fxLayoutGap="2">
+                      <span class="mat-body-strong text-right column-header">{{detalhe[0]}}:</span>
+                    </div>
+                    <div fxFlex fxFlexOffset="1" fxLayoutAlign="start center">
+                      {{detalhe[1]}}
+                    </div>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </mat-card-content>
+        </mat-card>
+        <mat-card-actions>
+          <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center" >
+            <div fxFlex.gt-sm="30" fxFlex.sm="50" fxFlex.lt-sm="100" fxFlexAlign="space-between" fxLayoutAlign="end center">
+              <button fxFlex fxFlexOffset="1" type="submit" title="{{'LABEL_VOLTAR' | i18n}}"
+                      (click)="voltar()"
+                      class="mat-button mat-raised-button mat-warn mat-button-base">
+                <span>{{'LABEL_VOLTAR' | i18n}}</span>
+              </button>
+              <button fxFlex fxFlexOffset="1" type="submit" title="{{'LABEL_VISUALIZAR_IMPRESSAO' | i18n}}"
+                      (click)="visualizarImpressao()"
+                      class="mat-button mat-raised-button mat-primary mat-button-base">
+                <span>{{'LABEL_VISUALIZAR_IMPRESSAO' | i18n}}</span>
+              </button>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>

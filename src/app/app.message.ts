@@ -78,6 +78,14 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_ID: 'Código do Grupo',
       LABEL_DESC_GRUPO: 'Descrição do Grupo',
 
+      // Texto manter TIPO AMIGO
+      LABEL_PESQUISAR_TIPOAMIGO: 'Pesquisar tipo de amigo',
+      LABEL_ALTERAR_TIPOAMIGO: 'Alterar tipo de amigo',
+      LABEL_INCLUIR_TIPOAMIGO: 'Incluir tipo de amigo',
+      LABEL_VISUALIZAR_TIPOAMIGO: 'Visualizar tipo de amigo',
+      LABEL_TIPOAMIGO_HINT: 'Digite o nome do tipo de amigo',
+      LABEL_DADOS_TIPOAMIGO: 'Dados do tipo amigo',
+      LABEL_REMOVER_TIPOAMIGO: 'Remover tipo de amigo',
 
       // Textos UC004_Manter_Usuario
       LABEL_PESQUISAR_USUARIO: 'Pesquisar Usuário',
@@ -181,6 +189,7 @@ export class AppMessage implements InternacionalizacaoResource {
       MSG041: 'A data final deve ser maior ou igual a data inicial.',
       MSG042: 'Usu\u00E1rio Bloqueado',
       MSG044: 'Usu\u00E1rio n\u00E3o tem permiss\u00E3o de acesso a funcionalidade acessada.',
+      MSG045: 'Confirmar Exclus\u00E1o?',
 
       // Validation
       required: 'Campo obrigat\u00F3rio n\u00E3o preenchido.',

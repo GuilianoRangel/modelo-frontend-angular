@@ -28,11 +28,11 @@
         <mat-icon>person</mat-icon>
         <span>Usuários</span>
       </button>
-      <button mat-menu-item [routerLink]="['/administracao/audit']"
-              *ngIf="securityService.hasRoles(['ROLE_AUDITORIA_VISUALIZAR', 'ROLE_AUDITORIA_PESQUISAR'])"
+      <button mat-menu-item [routerLink]="['/administracao/tipo-amigo']"
+              *ngIf="securityService.hasRoles(['ROLE_TIPOAMIGO_VISUALIZAR', 'ROLE_TIPOAMIGO_PESQUISAR'])"
       >
-        <mat-icon>sync_problem</mat-icon>
-        <span>Auditória</span>
+        <mat-icon>assignment_ind</mat-icon>
+        <span>Tipo Amigo</span>
       </button>
     </mat-menu>
 
@@ -50,11 +50,11 @@
       >
         <mat-icon>person</mat-icon>
         Usuários</a>
-      <a mat-button [routerLink]="['/administracao/audit']"
-         *ngIf="securityService.hasRoles(['ROLE_AUDITORIA_VISUALIZAR', 'ROLE_AUDITORIA_PESQUISAR'])"
+      <a mat-button [routerLink]="['/administracao/tipo-amigo']"
+         *ngIf="securityService.hasRoles(['ROLE_TIPOAMIGO_VISUALIZAR', 'ROLE_TIPOAMIGO_PESQUISAR'])"
       >
-        <mat-icon>sync_problem</mat-icon>
-        Auditoria</a>
+        <mat-icon>assignment_ind</mat-icon>
+        Tipo Amigo</a>
     </div>
   </div>
 </mat-toolbar>

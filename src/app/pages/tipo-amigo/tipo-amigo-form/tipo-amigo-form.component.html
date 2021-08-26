@@ -1,0 +1,71 @@
+<div fxLayout="column" fxLayoutGap="1.5%" fxLayoutGap.xs="2%">
+
+  <div fxLayout="row">
+    <div class="content__title" fxFlex fxFlexAlign="center">
+      <span *ngIf="acaoSistema.isAcaoAlterar()">{{'LABEL_ALTERAR_TIPOAMIGO' | i18n}}</span>
+      <span *ngIf="acaoSistema.isAcaoIncluir()">{{'LABEL_INCLUIR_TIPOAMIGO' | i18n}}</span>
+      <span *ngIf="acaoSistema.isAcaoVisualizar()">{{'LABEL_VISUALIZAR_TIPOAMIGO' | i18n}}</span>
+    </div>
+  </div>
+
+  <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+
+    <form #formTipoAmigo="ngForm">
+      <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+        <mat-card-title>
+          <span>{{'LABEL_DADOS_TIPOAMIGO' | i18n}}</span>
+        </mat-card-title>
+        <mat-card-content fxLayout="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%">
+
+          <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
+            <mat-form-field fxFlex>
+              <mat-label>{{'LABEL_NOME' | i18n}}</mat-label>
+              <input matInput placeholder="{{'LABEL_INFORME_NOME' | i18n}}" title="{{'LABEL_NOME' | i18n}}"
+                     [(ngModel)]="tipoAmigo.nome" name="nome" required maxlength="100"
+                     [disabled]="acaoSistema.isAcaoVisualizar()"
+              >
+              <mat-error validationMessage [submitted]="submitted"></mat-error>
+            </mat-form-field>
+
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+
+    <mat-card-footer fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
+      <div fxLayout="row" fxFlex="100" fxLayoutAlign="end center">
+        <div fxFlex.gt-sm="30" fxFlex.sm="50" fxFlex.lt-sm="100" fxFlexAlign="space-between"
+             fxLayoutAlign="end center">
+          <a title="{{'LABEL_VOLTAR' | i18n}}" (click)="cancelar()" fxFlex fxFlexOffset="1"
+             class="mat-button mat-raised-button mat-primary mat-button-base"
+             *ngIf="acaoSistema.isAcaoVisualizar()"
+          >
+            <span>{{'LABEL_VOLTAR' | i18n}}</span>
+          </a>
+          <a title="{{'LABEL_CANCELAR' | i18n}}" (click)="cancelar()" fxFlex fxFlexOffset="1"
+             class="mat-button mat-raised-button mat-warn mat-button-base"
+             *ngIf="!acaoSistema.isAcaoVisualizar()"
+          >
+            <span>{{'LABEL_CANCELAR' | i18n}}</span>
+          </a>
+
+          <button type="submit" title="{{'LABEL_REMOVER' | i18n}}" (click)="remover(tipoAmigo)"
+                  fxFlex fxFlexOffset="1"
+                  class="mat-button mat-raised-button mat-warn mat-button-base"
+                  *ngIf="acaoSistema.isAcaoAlterar() && securityService.hasRoles('ROLE_TIPOAMIGO_REMOVER')"
+          >
+            <span>{{'LABEL_REMOVER' | i18n}}</span>
+          </button>
+          <button type="submit" title="{{'LABEL_SALVAR' | i18n}}" (click)="salvar(tipoAmigo, formTipoAmigo, $event)"
+                  fxFlex fxFlexOffset="1"
+                  class="mat-button mat-raised-button mat-primary mat-button-base"
+                  *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoIncluir()"
+          >
+            <span>{{'LABEL_SALVAR' | i18n}}</span>
+          </button>
+        </div>
+      </div>
+    </mat-card-footer>
+
+  </mat-card>
+</div>

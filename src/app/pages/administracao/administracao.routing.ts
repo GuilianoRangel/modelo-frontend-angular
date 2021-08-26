@@ -29,7 +29,13 @@ export const AdministracaoRoutes: Routes = [
           'ROLE_USUARIO_ATIVAR_INATIVAR',
           'ROLE_USUARIO_VINCULAR_GRUPO',
           'ROLE_AUDITORIA_PESQUISAR',
-          'ROLE_PORTAL_AUDITORIA_EXPORTAR'
+          'ROLE_PORTAL_AUDITORIA_EXPORTAR',
+
+          'ROLE_TIPOAMIGO_INCLUIR',
+          'ROLE_TIPOAMIGO_ALTERAR',
+          'ROLE_TIPOAMIGO_PESQUISAR',
+          'ROLE_TIPOAMIGO_VISUALIZAR',
+          'ROLE_TIPOAMIGO_REMOVER',
         ]
       }
     },
@@ -45,7 +51,7 @@ export const AdministracaoRoutes: Routes = [
         path: 'usuario', loadChildren: () => import('./../usuario/usuario.module').then(m => m.UsuarioModule)
       },
       {
-        path: 'audit', loadChildren: () => import('../auditoria/audit.module').then(m => m.AuditModule)
+        path: 'tipo-amigo', loadChildren: () => import('../tipo-amigo/tipo-amigo.module').then(m => m.TipoAmigoModule)
       }
     ]
   }

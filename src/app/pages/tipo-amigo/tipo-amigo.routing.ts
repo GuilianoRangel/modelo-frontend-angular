@@ -9,7 +9,7 @@ import {TipoAmigoListResolve} from './shared/tipo-amigo-client/tipo-amigo-list.r
 /**
  * Configurações de rota de Usuário.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export const TipoAmigoRoutes: Routes = [
   {

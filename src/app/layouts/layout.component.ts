@@ -10,7 +10,7 @@ import {AbstractComponent} from '../shared/component/Abstract.component';
 /**
  * Componente Layout.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Component({
   selector: 'app-layout',

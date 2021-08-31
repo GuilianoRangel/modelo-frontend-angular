@@ -3,7 +3,7 @@
 /**
  * Interface provider responsável por permitir a centralização de 'descrições/mensagens' utilizadas na aplicação em um unico local.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export interface MessageResource {
 
@@ -19,7 +19,7 @@ export interface MessageResource {
 /**
  * Interface 'Provider' responsável por prover instâncias de 'MessageResource'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export interface MessageResourceProvider {
 
@@ -32,6 +32,6 @@ export interface MessageResourceProvider {
 /**
  * Classe 'Provider' responsável por prover instâncias de 'MessageResource'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export class MessageResourceProvider implements MessageResourceProvider { }

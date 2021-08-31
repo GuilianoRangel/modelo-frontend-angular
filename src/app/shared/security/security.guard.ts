@@ -11,7 +11,7 @@ import { config, IConfig } from './config';
  * Implementação que garante a segurança das rotas permitindo o acesso apenas se o 'Usuário' estiver autenticado
  * na aplicação e possuir os papéis necessários para o acessar.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Injectable()
 export class SecurityGuard implements CanActivate {

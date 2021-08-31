@@ -9,7 +9,7 @@ import {environment} from '../../../environments/environment';
 /**
  * Classe service responsável por prover os recursos associadas a autenticação de 'Usuário'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Injectable()
 export class AutenticacaoService {

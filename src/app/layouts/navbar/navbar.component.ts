@@ -10,7 +10,7 @@ import {AbstractComponent} from '../../shared/component/Abstract.component';
 /**
  * Componente Navbar
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Component({
   selector: 'app-navbar',

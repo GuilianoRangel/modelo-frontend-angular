@@ -8,7 +8,7 @@ import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 /**
  * Configurações de rota de Usuário.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export const UsuarioRoutes: Routes = [
   {

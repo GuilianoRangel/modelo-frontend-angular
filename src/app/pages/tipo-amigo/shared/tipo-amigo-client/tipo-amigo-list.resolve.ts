@@ -10,7 +10,7 @@ import {FiltroTipoAmigoDTO} from '../../../../shared/dto/filtro-tipo-amigo.dto';
 /**
  * Classe resolve responsável pela busca das informações de Usuário conforme o id.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Injectable()
 export class TipoAmigoListResolve implements Resolve<any> {

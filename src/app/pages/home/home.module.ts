@@ -17,7 +17,7 @@ import {ModuloClientModule} from '../../shared/services/modulo-client/modulo-cli
 /**
  * Módulo responsável por prover o template padrão das interfaces principais.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @NgModule({
   imports: [

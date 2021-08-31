@@ -15,7 +15,7 @@ import {ModuloClientService} from '../../../shared/services/modulo-client/modulo
 /**
  * Componente de listagem de Grupo.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Component({
   selector: 'app-grupo-list',

@@ -17,7 +17,7 @@ import {LoaderDialogComponent} from './loader-dialog/loader-dialog.component';
 import {MaterialModule} from './material.module';
 
 /**
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @NgModule({
   declarations: [

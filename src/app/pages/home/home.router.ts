@@ -7,7 +7,7 @@ import {HomeComponent} from './home.component';
 /**
  * Configuração de 'Rotas' do módulo 'Home'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export const HomeRoutes: Routes = [
   {

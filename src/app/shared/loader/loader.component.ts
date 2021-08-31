@@ -6,7 +6,7 @@ import { LoaderService } from './loader.service';
 /**
  * Componente padrão do módulo de login.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Component({
   selector: 'loader',

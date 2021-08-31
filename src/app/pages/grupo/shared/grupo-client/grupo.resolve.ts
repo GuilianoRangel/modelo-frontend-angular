@@ -9,7 +9,7 @@ import { MessageService } from 'src/app/shared/message/message.service';
 /**
  * Classe resolve responsável pela busca das informações da grupo conforme o id.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Injectable()
 export class GrupoResolve implements Resolve<any> {

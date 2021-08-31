@@ -19,7 +19,7 @@ const NOME_DOCUMENTO_EXPORTACAO = 'exportacao_log_auditoria.pdf';
 /**
  * Componente de listagem de Auditoria.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Component({
   selector: 'app-filter-audit',

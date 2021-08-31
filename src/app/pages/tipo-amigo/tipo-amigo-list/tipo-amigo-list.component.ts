@@ -13,7 +13,7 @@ import {FiltroTipoAmigoDTO} from '../../../shared/dto/filtro-tipo-amigo.dto';
 /**
  * Componente de listagem de Usuário.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Component({
   selector: 'app-tipoamigo-list',

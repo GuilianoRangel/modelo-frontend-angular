@@ -4,7 +4,7 @@ import { HttpParams } from '@angular/common/http';
 /**
  * Classe de trânsferencia com os parâmetros utilizados em filtros de pesquisa de Tipo Amigo.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export class FiltroTipoAmigoDTO {
 

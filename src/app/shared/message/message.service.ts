@@ -6,7 +6,7 @@ import { InternacionalizacaoPipe } from './internacionalizacao.pipe';
 /**
  * Classe de representação de 'Mensagem'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export class Message {
 
@@ -29,7 +29,7 @@ export class Message {
 /**
  * Classe de representação de 'Item de Mensagem'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export class MessageItem {
 
@@ -115,14 +115,14 @@ export class MessageItem {
 /**
  * Interface 'Listener' que determina o contrato da função callback referente ao 'confirm-mesage'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export type ConfirmListener = () => void;
 
 /**
  * Classe 'service' responsável por prover o recurso de mensagem da aplicação.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Injectable()
 export class MessageService {

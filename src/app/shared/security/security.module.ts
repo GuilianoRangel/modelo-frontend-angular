@@ -9,7 +9,7 @@ import { config, INITIAL_CONFIG, initialConfig, NEW_CONFIG, optionsConfig } from
 /**
  * Modulo responsável por encapsular os mecanismos de 'Segurança' necessários na aplicação.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @NgModule({
   imports: [

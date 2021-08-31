@@ -10,7 +10,7 @@ import {AbstractComponent} from '../../shared/component/Abstract.component';
 /**
  * Componente header.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Component({
   selector: 'app-header',

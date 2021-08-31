@@ -9,7 +9,7 @@ import { TipoAmigoClientService } from './tipo-amigo-client.service';
 /**
  * Classe resolve responsável pela busca das informações de Usuário conforme o id.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Injectable()
 export class TipoAmigoResolve implements Resolve<any> {

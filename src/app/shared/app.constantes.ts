@@ -21,7 +21,7 @@ export const PAGINATOR_PAGE_SIZE = 5;
 /**
  * Classe que disponibiliza as constantes de Status na aplicação.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export class StatusAtivoInativo {
 
@@ -44,7 +44,7 @@ export class StatusAtivoInativo {
 /**
  * Classe que disponibiliza as constantes de Tipos de Usuário na aplicação.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export class TipoUsuario {
 
@@ -65,7 +65,7 @@ export class TipoUsuario {
 /**
  * Classe que disponibiliza as constantes de Tipos de Telefone na aplicação.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export class TipoTelefone {
 
@@ -88,7 +88,7 @@ export class TipoTelefone {
 /**
  * Classe que disponibiliza as constantes de Tipos de Revisão na aplicação.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export class TipoRevisao {
 

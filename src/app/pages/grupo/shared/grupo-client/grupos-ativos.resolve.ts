@@ -10,7 +10,7 @@ import {FiltroGrupoDTO} from '../../../../shared/dto/filtro-grupo.dto';
 /**
  * Classe resolve responsável por recuperar as grupos ativas na API.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Injectable()
 export class GruposAtivosResolve implements Resolve<any> {

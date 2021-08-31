@@ -3,7 +3,7 @@ import {InternacionalizacaoResource} from './shared/message/internacionalizacao.
 /**
  * Implementação responsável por prover as 'descrições' e 'mensagens' utilizadas na aplicação em um único local.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export class AppMessage implements InternacionalizacaoResource {
 

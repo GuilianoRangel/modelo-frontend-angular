@@ -5,7 +5,7 @@ import { MessageResource, MessageResourceProvider } from './message.resource';
 /**
  * Classe 'Pipe' para prover o recurso de 'i18n'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Pipe({
   name: 'i18n'

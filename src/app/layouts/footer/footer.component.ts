@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 /**
  * Componente footer.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Component({
   selector: 'app-footer',

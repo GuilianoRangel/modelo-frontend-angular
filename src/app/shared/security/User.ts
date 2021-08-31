@@ -1,7 +1,7 @@
 /**
  * Interface com a representação de 'Usuário'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export interface User {
   id: number;

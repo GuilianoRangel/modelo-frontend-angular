@@ -6,7 +6,7 @@ import {LayoutComponent} from '../../layouts/layout.component';
 /**
  * Configuração de 'Rotas' do módulo 'Home'.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export const AdministracaoRoutes: Routes = [
   {

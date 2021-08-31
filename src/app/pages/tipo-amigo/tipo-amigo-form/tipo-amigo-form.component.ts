@@ -11,7 +11,7 @@ import {TipoAmigoClientService} from '../shared/tipo-amigo-client/tipo-amigo-cli
 /**
  * Componente de formulário de Usuário.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 @Component({
   selector: 'app-usuario-form',

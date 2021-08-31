@@ -8,7 +8,7 @@ import {AdministracaoRoutes} from './pages/administracao/administracao.routing';
 /**
  * Configuração de 'Rotas' do módulo 'Principal' da aplicação.
  *
- * @author Squadra Tecnologia
+ * @author Guiliano Rangel (UEG)
  */
 export const routes: Routes = [
   ...HomeRoutes,

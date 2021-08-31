@@ -87,6 +87,18 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_DADOS_TIPOAMIGO: 'Dados do tipo amigo',
       LABEL_REMOVER_TIPOAMIGO: 'Remover tipo de amigo',
 
+      // Texto manter  AMIGO
+      LABEL_PESQUISAR_AMIGO: 'Pesquisar amigo',
+      LABEL_ALTERAR_AMIGO: 'Alterar amigo',
+      LABEL_INCLUIR_AMIGO: 'Incluir amigo',
+      LABEL_VISUALIZAR_AMIGO: 'Visualizar amigo',
+      LABEL_AMIGO_HINT: 'Digite o nome do amigo',
+      LABEL_DADOS_AMIGO: 'Dados do amigo',
+      LABEL_REMOVER_AMIGO: 'Remover amigo',
+      LABEL_STATUS_AMIGO: 'É Amigo',
+      LABEL_DATA_AMIZADE: 'Data Amizade',
+      LABEL_TIPO_AMIGO: 'Tipo Amigo',
+
       // Textos UC004_Manter_Usuario
       LABEL_PESQUISAR_USUARIO: 'Pesquisar Usuário',
       LABEL_ALTERAR_USUARIO: 'Alterar Usuário',
@@ -190,6 +202,8 @@ export class AppMessage implements InternacionalizacaoResource {
       MSG042: 'Usu\u00E1rio Bloqueado',
       MSG044: 'Usu\u00E1rio n\u00E3o tem permiss\u00E3o de acesso a funcionalidade acessada.',
       MSG045: 'Confirmar Exclus\u00E1o?',
+      MSG046: 'Tornar cadastro Amigo?',
+      MSG047: 'Deixar de ser Amigo do cadastro?',
 
       // Validation
       required: 'Campo obrigat\u00F3rio n\u00E3o preenchido.',

@@ -42,6 +42,29 @@ export class StatusAtivoInativo {
 }
 
 /**
+ * Classe que disponibiliza as constantes de Status SimNao na aplicação.
+ *
+ * @author Guiliano Rangel (UEG)
+ */
+export class StatusSimNao {
+
+  public static readonly SIM: StatusSimNao = new StatusSimNao('S', 'Sim');
+
+  public static readonly NAO: StatusSimNao = new StatusSimNao('N', 'Não');
+
+  /**
+   * Construtor da classe.
+   *
+   * @param id
+   * @param descricao
+   */
+  constructor(
+    public id: string,
+    public descricao: string
+  ) {}
+}
+
+/**
  * Classe que disponibiliza as constantes de Tipos de Usuário na aplicação.
  *
  * @author Guiliano Rangel (UEG)

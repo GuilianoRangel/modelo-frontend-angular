@@ -34,6 +34,12 @@
         <mat-icon>assignment_ind</mat-icon>
         <span>Tipo Amigo</span>
       </button>
+      <button mat-menu-item [routerLink]="['/administracao/amigo']"
+              *ngIf="securityService.hasRoles(['ROLE_AMIGO_VISUALIZAR', 'ROLE_AMIGO_PESQUISAR'])"
+      >
+        <mat-icon>assignment_ind</mat-icon>
+        <span>Amigo</span>
+      </button>
     </mat-menu>
 
     <div fxFlex fxLayout fxLayoutAlign="start" fxHide.xs>
@@ -55,6 +61,12 @@
       >
         <mat-icon>assignment_ind</mat-icon>
         Tipo Amigo</a>
+
+      <a mat-button [routerLink]="['/administracao/amigo']"
+         *ngIf="securityService.hasRoles(['ROLE_AMIGO_VISUALIZAR', 'ROLE_AMIGO_PESQUISAR'])"
+      >
+        <mat-icon>assignment_ind</mat-icon>
+        Amigo</a>
     </div>
   </div>
 </mat-toolbar>

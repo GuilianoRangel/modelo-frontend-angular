@@ -6,7 +6,7 @@ import {
   FX_FLEX_GT_LG,
   FX_FLEX_XL,
   PAGINATOR_PAGE_SIZE,
-  StatusAtivoInativo, TipoUsuario, TipoTelefone, TipoRevisao
+  StatusAtivoInativo, TipoUsuario, TipoTelefone, TipoRevisao, StatusSimNao
 } from '../app.constantes';
 
 /**
@@ -22,6 +22,7 @@ export class AbstractComponent {
   public PAGINATOR_PAGE_SIZE = PAGINATOR_PAGE_SIZE;
 
   public listStatusAtivosInativos: Array<StatusAtivoInativo>;
+  public listStatusSimNao: Array<StatusSimNao>;
   public listTiposUsuarios: Array<TipoUsuario>;
   public listTiposTelefones: Array<TipoTelefone>;
   public listTiposRevisoes: Array<TipoRevisao>;
@@ -31,6 +32,7 @@ export class AbstractComponent {
     this.initListTiposUsuarios();
     this.initListTiposTelefones();
     this.initListTiposRevisoes();
+    this.initListStatusSimNao();
   }
 
   /**
@@ -40,6 +42,15 @@ export class AbstractComponent {
     this.listStatusAtivosInativos = [];
     this.listStatusAtivosInativos.push(StatusAtivoInativo.ATIVO);
     this.listStatusAtivosInativos.push(StatusAtivoInativo.INATIVO);
+  }
+
+  /**
+   * Inicializa a Lista de Status.
+   */
+  private initListStatusSimNao() {
+    this.listStatusSimNao = [];
+    this.listStatusSimNao.push(StatusSimNao.SIM);
+    this.listStatusSimNao.push(StatusSimNao.NAO);
   }
 
   /**

@@ -36,6 +36,13 @@ export const AdministracaoRoutes: Routes = [
           'ROLE_TIPOAMIGO_PESQUISAR',
           'ROLE_TIPOAMIGO_VISUALIZAR',
           'ROLE_TIPOAMIGO_REMOVER',
+
+          'ROLE_AMIGO_INCLUIR',
+          'ROLE_AMIGO_ALTERAR',
+          'ROLE_AMIGO_PESQUISAR',
+          'ROLE_AMIGO_VISUALIZAR',
+          'ROLE_AMIGO_REMOVER',
+          'ROLE_AMIGO_STATUS',
         ]
       }
     },
@@ -52,6 +59,9 @@ export const AdministracaoRoutes: Routes = [
       },
       {
         path: 'tipo-amigo', loadChildren: () => import('../tipo-amigo/tipo-amigo.module').then(m => m.TipoAmigoModule)
+      },
+      {
+        path: 'amigo', loadChildren: () => import('../amigo/amigo.module').then(m => m.AmigoModule)
       }
     ]
   }

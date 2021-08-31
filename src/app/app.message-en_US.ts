@@ -181,6 +181,8 @@ export class AppMessage implements InternacionalizacaoResource {
       MSG041: 'A data final deve ser maior ou igual a data inicial.',
       MSG042: 'Usu\u00E1rio Bloqueado',
       MSG044: 'Usu\u00E1rio n\u00E3o tem permiss\u00E3o de acesso a funcionalidade acessada.',
+      MSG046: 'Tornar cadastro Amigo?',
+      MSG047: 'Deixar de ser Amigo do cadastro?',
 
       // Validation
       required: 'Campo obrigat\u00F3rio n\u00E3o preenchido.',

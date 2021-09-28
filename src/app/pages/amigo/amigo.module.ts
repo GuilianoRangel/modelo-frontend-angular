@@ -7,7 +7,7 @@ import { MaterialModule } from '../../layouts/material.module';
 
 
 import { OrderModule } from 'ngx-order-pipe';
-import { UsuarioRoutes } from './amigo.routing';
+import { AmigoRoutes } from './amigo.routing';
 import { MessageModule } from '../../shared/message/message.module';
 import { ValidationModule } from '../../shared/validation/validation.module';
 import { AmigoFormComponent } from './amigo-form/amigo-form.component';
@@ -30,7 +30,7 @@ import { AmigoClientModule } from './shared/amigo-client/amigo-client.module';
     ValidationModule,
     AmigoClientModule,
     NgxMaskModule.forRoot({}),
-    RouterModule.forChild(UsuarioRoutes)
+    RouterModule.forChild(AmigoRoutes)
   ]
 })
 export class AmigoModule { }

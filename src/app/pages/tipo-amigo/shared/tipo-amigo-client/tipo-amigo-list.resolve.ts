@@ -19,12 +19,12 @@ export class TipoAmigoListResolve implements Resolve<any> {
    * Construtor da classe.
    *
    * @param router
-   * @param usuarioClientService
+   * @param tipoAmigoClientService
    * @param messageService
    */
   constructor(
     private router: Router,
-    private usuarioClientService: TipoAmigoClientService,
+    private tipoAmigoClientService: TipoAmigoClientService,
     private messageService: MessageService
   ) { }
 
@@ -39,7 +39,7 @@ export class TipoAmigoListResolve implements Resolve<any> {
     return new Observable(observer => {
       const filtro: FiltroTipoAmigoDTO = new FiltroTipoAmigoDTO();
       filtro.nome = '%%%%';
-      this.usuarioClientService.getByFiltro(filtro).subscribe(
+      this.tipoAmigoClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);
           observer.complete();

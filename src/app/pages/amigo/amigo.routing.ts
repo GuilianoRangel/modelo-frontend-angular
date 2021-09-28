@@ -12,7 +12,7 @@ import {TipoAmigoListResolve} from '../tipo-amigo/shared/tipo-amigo-client/tipo-
  *
  * @author Guiliano Rangel (UEG)
  */
-export const UsuarioRoutes: Routes = [
+export const AmigoRoutes: Routes = [
   {
     path: 'incluir',
     component: AmigoFormComponent,

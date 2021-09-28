@@ -60,6 +60,7 @@
               <mat-select placeholder="{{'LABEL_TIPO_AMIGO' | i18n}}" title="{{'LABEL_TIPO_AMIGO' | i18n}}"
                           [(ngModel)]="amigo.idTipoAmigo"
                           [disabled]="acaoSistema.isAcaoVisualizar()"
+                          required
                           name="tipoAmigo"
               >
                 <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
@@ -67,6 +68,7 @@
                   {{tipoAmigo.nome}}
                 </mat-option>
               </mat-select>
+              <mat-error validationMessage [submitted]="submittedAmigo"></mat-error>
             </mat-form-field>
           </div>
         </mat-card-content>

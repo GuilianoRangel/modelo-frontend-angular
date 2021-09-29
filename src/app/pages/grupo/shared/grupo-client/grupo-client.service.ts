@@ -86,4 +86,13 @@ export class GrupoClientService {
   public getGruposAtivos(): Observable<any> {
     return this.http.get(`${environment.urlApi}/grupos/grupo/ativos`);
   }
+
+  /**
+   * Retorna a Estatisticas de Usuários por Grupo.
+   *
+   * @param idSistema
+   */
+  public getGruposStats(): Observable<any> {
+    return this.http.get(`${environment.urlApi}/grupos/estatisticas`);
+  }
 }

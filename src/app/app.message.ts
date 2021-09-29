@@ -48,6 +48,8 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_EXPORTAR: 'Exportar',
       LABEL_SELECIONE: 'Selecione',
 
+      LABEL_STATS_USUARIO_GRUPO: 'Gráfico de Usuários por grupo',
+
 
 
       // Mensagem sitema

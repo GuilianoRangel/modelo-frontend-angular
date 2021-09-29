@@ -40,6 +40,11 @@
         <mat-icon>assignment_ind</mat-icon>
         <span>Amigo</span>
       </button>
+
+      <button mat-menu-item [routerLink]="['/grupos/estatisticas']">
+        <mat-icon>assignment_ind</mat-icon>
+        <span>Est. Grupos</span>
+      </button>
     </mat-menu>
 
     <div fxFlex fxLayout fxLayoutAlign="start" fxHide.xs>
@@ -67,6 +72,10 @@
       >
         <mat-icon>assignment_ind</mat-icon>
         Amigo</a>
+
+      <a mat-button [routerLink]="['/administracao/grupo/estatisticas']">
+        <mat-icon>assignment_ind</mat-icon>
+        Est. Grupos</a>
     </div>
   </div>
 </mat-toolbar>

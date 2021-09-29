@@ -5,6 +5,8 @@ import {GrupoFormComponent} from './grupo-form/grupo-form.component';
 import {GrupoListComponent} from './grupo-list/grupo-list.component';
 import {SecurityGuard} from 'src/app/shared/security/security.guard';
 import {ModuloClientResolve} from '../../shared/services/modulo-client/modulo-client.resolve';
+import {GrupoStatsComponent} from './grupo-stats/grupo-stats.component';
+import {GrupoStatsResolve} from './shared/grupo-client/grupo-stats.resolve';
 
 /**
  * Configurações de rota de Grupo.
@@ -61,6 +63,13 @@ export const GrupoRoutes: Routes = [
     resolve: {
       // grupos: GruposAtivosResolve,
       modulos: ModuloClientResolve
+    }
+  },
+  {
+    path: 'estatisticas',
+    component: GrupoStatsComponent,
+    resolve: {
+      grupoEstatitisticas: GrupoStatsResolve
     }
   },
   {

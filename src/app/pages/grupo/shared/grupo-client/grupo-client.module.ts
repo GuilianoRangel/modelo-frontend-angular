@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { GrupoResolve } from './grupo.resolve';
 import { GrupoClientService } from './grupo-client.service';
 import { GruposAtivosResolve } from './grupos-ativos.resolve';
+import {GrupoStatsResolve} from './grupo-stats.resolve';
 
 
 /**
@@ -17,7 +18,8 @@ import { GruposAtivosResolve } from './grupos-ativos.resolve';
   providers: [
     GrupoClientService,
     GruposAtivosResolve,
-    GrupoResolve
+    GrupoResolve,
+    GrupoStatsResolve
   ]
 })
 export class GrupoClientModule { }

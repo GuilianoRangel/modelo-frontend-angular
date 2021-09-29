@@ -12,9 +12,11 @@ import {GrupoFormComponent} from './grupo-form/grupo-form.component';
 import {GrupoClientModule} from './shared/grupo-client/grupo-client.module';
 import {OrderModule} from 'ngx-order-pipe';
 import {ValidationModule} from '../../shared/validation/validation.module';
+import {GrupoStatsComponent} from './grupo-stats/grupo-stats.component';
+import {DxChartModule, DxPieChartModule} from 'devextreme-angular';
 
 @NgModule({
-  declarations: [GrupoListComponent, GrupoFormComponent],
+  declarations: [GrupoListComponent, GrupoFormComponent, GrupoStatsComponent],
   imports: [
     CommonModule,
     MaterialModule,
@@ -23,7 +25,9 @@ import {ValidationModule} from '../../shared/validation/validation.module';
     OrderModule,
     GrupoClientModule,
     RouterModule.forChild(GrupoRoutes),
-    ValidationModule
+    ValidationModule,
+    DxPieChartModule,
+    DxChartModule
   ]
 })
 export class GrupoModule { }

@@ -50,7 +50,11 @@ export class AppMessage implements InternacionalizacaoResource {
 
       LABEL_STATS_USUARIO_GRUPO: 'Gráfico de Usuários por grupo',
 
-
+      // recuperar Senha
+      LABEL_RECUPERAR_SENHA: 'Recuperação de Senha',
+      LABEL_ALTERAR_SENHA: 'Alteração da Senha',
+      LABEL_NOVA_SENHA: 'Nova Senha',
+      LABEL_CONFIRMA_SENHA: 'Confirma nova Senha',
 
       // Mensagem sitema
       MSG_DESEJA_SAIR_SISTEMA: 'Deseja sair do sistema?',
@@ -206,9 +210,13 @@ export class AppMessage implements InternacionalizacaoResource {
       MSG045: 'Confirmar Exclus\u00E1o?',
       MSG046: 'Tornar cadastro Amigo?',
       MSG047: 'Deixar de ser Amigo do cadastro?',
+      MSG048: 'Recuperação de senha realizada com sucesso. Será encaminhado para o e-mail {0} um link para a criação de uma nova senha.',
+      MSG049: 'Deseja realmente cancelar a operação? Os dados informados não serão salvos e a operação será cancelada.',
 
       // Validation
       required: 'Campo obrigat\u00F3rio n\u00E3o preenchido.',
+      minlength: 'Total de caracteres inferior ao tamanho mínimo.',
+      maxlength: 'Total de caracteres excede o tamanho máximo.',
       'Mask error': 'Valor inválido',
     };
   }

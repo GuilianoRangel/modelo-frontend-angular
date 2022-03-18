@@ -1,0 +1,40 @@
+<div fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%"  fxLayoutAlign="center center">
+  <div fxFlex="50" fxFlex.xs="100">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div>
+        <span class="content__title">{{'LABEL_ALTERAR_SENHA' | i18n}}</span>
+      </div>
+    </div>
+    <mat-card>
+      <mat-card-title [style.text-align]="'center'">
+        <mat-icon class="icon_size" color="primary">person_pin</mat-icon>
+
+      </mat-card-title>
+      <mat-card-content>
+        <form #formAlterarSenha="ngForm" (ngSubmit)="onSubmit(redefinirSenhaTO, formAlterarSenha)" novalidate>
+          <div fxLayout="column">
+            <mat-form-field>
+              <mat-label>{{'LABEL_NOVA_SENHA' | i18n}}</mat-label>
+              <input matInput id="inputNovaSenha" type="password" title="{{'LABEL_CPF' | i18n}}"
+                     name="novaSenha" required [(ngModel)]="redefinirSenhaTO.novaSenha" autocomplete="off"
+                     minlength="6" maxlength="20"
+                     placeholder="{{'LABEL_INFORME_SENHA' | i18n}}" maxlength="20">
+              <mat-error validationMessage [submitted]="submitted"></mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>{{'LABEL_CONFIRMA_SENHA' | i18n}}</mat-label>
+              <input matInput id="inputConfirmarSenha" type="password" title="{{'LABEL_CPF' | i18n}}"
+                     name="confirmarSenha" required [(ngModel)]="redefinirSenhaTO.confirmarSenha" autocomplete="off"
+                     minlength="6" maxlength="20"
+                     placeholder="{{'LABEL_INFORME_SENHA' | i18n}}" maxlength="20">
+              <mat-error validationMessage [submitted]="submitted"></mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" title="{{'LABEL_ALTERAR' | i18n}}">
+              <span>{{'LABEL_ENTRAR' | i18n}}</span>
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

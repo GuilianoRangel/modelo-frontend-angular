@@ -2,9 +2,6 @@
 @import 'variables';
 
 
-
-
-
 @include mat-core();
 
 // Create a config with the default typography levels.
@@ -23,13 +20,14 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 //$primary: mat-palette($mat-deep-purple);
-$primary: mat-palette($mat-blue,600);
+$primary: mat-palette($mat-purple,900);
 //#0a8396
 //02a2bb
 //$accent: mat-palette($mat-green);
-$accent: mat-palette($mat-blue,800);
+$accent: mat-palette($mat-pink,900);
+$warn: mat-palette($mat-warn,900);
 
-$app-theme: mat-light-theme($primary, $accent);
+$app-theme: mat-light-theme($primary, $accent, $warn);
 
 
 $ueg-color-dark: #000445;

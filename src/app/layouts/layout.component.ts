@@ -5,6 +5,7 @@ import {SecurityService} from '../shared/security/security.service';
 import {MessageService} from '../shared/message/message.service';
 import {config, IConfig} from '../shared/security/config';
 import {AbstractComponent} from '../shared/component/Abstract.component';
+import {ActivatedRoute} from "@angular/router";
 
 
 /**
@@ -30,6 +31,7 @@ export class LayoutComponent extends AbstractComponent implements AfterViewInit 
   constructor(
     public securityService: SecurityService,
     public messageService: MessageService,
+    public route: ActivatedRoute,
     @Inject(config) private config: IConfig) {
     super();
   }
@@ -37,6 +39,7 @@ export class LayoutComponent extends AbstractComponent implements AfterViewInit 
    * Init dependency after view.
    */
   ngAfterViewInit(): void {
+    console.log(this.route.snapshot.url[0].path)
   }
 
   /**

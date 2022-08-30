@@ -1,7 +1,7 @@
 <div fxFlex fxLayout="column"  fxFlexFill class="wrapper mat-typography">
 
     <!-- HEADER -->
-    <app-header #header ></app-header>
+    <app-header #header *ngIf="this.route.snapshot.url[0].path != 'acesso'"></app-header>
 
     <!-- NAV -->
     <app-navbar id="container-nav" (perfil)="openPerfilModal()" (logout)="sair()" *ngIf="isAutenticado()">
@@ -23,5 +23,5 @@
     </main>
 
     <!-- FOOTER -->
-    <app-footer fxFlexOffset="auto"></app-footer>
+    <app-footer fxFlexOffset="auto" *ngIf="this.route.snapshot.url[0].path != 'acesso'"></app-footer>
 </div>

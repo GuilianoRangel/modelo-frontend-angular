@@ -15,4 +15,31 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+$purple-900: #835AFD;
+$pink-900: #D67EE2;
+$pink-500: #E559F9;
+
+$info-900: #FAAD14;
+$success-900: #52C41A;
+
+$mat-purple: (
+  900: #835AFD,
+  contrast: (
+    100: $black,
+  )
+);
+$mat-pink: (
+  500: #E559F9,
+  900: #D67EE2,
+  contrast: (
+    100: $black,
+  )
+);
+$mat-warn: (
+  900: #FF4D4F,
+  contrast: (
+    100: $black,
+  )
+);
+
 $grays: () !default;

@@ -1,6 +1,69 @@
-  .icon_size{
-    font-size: 4em;
-    //color: #393068;
-    margin-bottom: 40px;
-    margin-left: -1em;
-  }
+@import '../../../_variables.scss';
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: $purple-900;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+.text-title {
+  transform: translate(-40%, 0%);
+  color: $white;
+}
+
+.form-field {
+  width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+h1#title {
+  color: $purple-900;
+}
+
+.button-row {
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+button {
+  background-color: $purple-900;
+  color: $white;
+  border: none;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 20px auto;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 220px;
+}
+
+a{
+  color: $pink-900;
+  cursor: pointer;
+}

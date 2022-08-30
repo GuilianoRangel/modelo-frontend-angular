@@ -28,7 +28,8 @@
   text-align: left;
 }
 
-.text-title {
+.login-content {
+  width: 100%;
   transform: translate(-40%, 0%);
   color: $white;
 }
@@ -66,4 +67,14 @@ button {
 a{
   color: $pink-900;
   cursor: pointer;
+}
+
+.footer-img{
+  width: 100%;
+  transform: translate(120%, 0%);
+}
+
+img#footer {
+  display: block;
+  width: 80px;
 }
